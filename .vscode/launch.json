@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Train main_CD.py",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/main_CD.py",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "args": [
+                "--train",
+                "--fusion_method", "gated",
+                "--mmcosine", "True",
+                "--scaling", "10",
+                "--dataset", "CREMAD"
+            ]
+        }
+    ]
+}

@@ -83,11 +83,11 @@ def get_arguments():
     parser.add_argument('--visual_pretrain',default='None',type=str,help='path of pretrained visual resnet')
 
     # dataset path
-    parser.add_argument('--visual_path', default='data/CREMA-D/image', type=str, help='path to image dataset')
-    parser.add_argument('--audio_path', default='data/CREMA-D/audio', type=str, help='path to audio dataset')
-    parser.add_argument('--stat_path', default='data/CREMA-D/stat.csv', type=str, help='path to state file')
-    parser.add_argument('--train_txt', default='data/CREMA-D/train.csv', type=str, help='path to training annotation file')
-    parser.add_argument('--test_txt', default='data/CREMA-D/test.csv', type=str, help='path to test annotation file')
+    parser.add_argument('--visual_path', default='data/CREMAD/image', type=str, help='path to image dataset')
+    parser.add_argument('--audio_path', default='data/CREMAD/audio', type=str, help='path to audio dataset')
+    parser.add_argument('--stat_path', default='data/CREMAD/stat.csv', type=str, help='path to state file')
+    parser.add_argument('--train_txt', default='data/CREMAD/train.csv', type=str, help='path to training annotation file')
+    parser.add_argument('--test_txt', default='data/CREMAD/test.csv', type=str, help='path to test annotation file')
 
 
        
@@ -233,14 +233,17 @@ def main():
     os.environ["CUDA_VISIBLE_DEVICES"] = args.gpu_ids
     gpu_ids = list(range(torch.cuda.device_count()))
 
-    device = torch.device('cuda:0')
+    # Check if a CUDA-capable GPU is available, otherwise fall back to CPU
+    device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+    print(f"Using device: {device}")
+
     model = AVClassifier(args)
     model.to(device)
 
     
 
     model = torch.nn.DataParallel(model, device_ids=gpu_ids)
-    model.cuda()
+    model.to(device)
 
 
 

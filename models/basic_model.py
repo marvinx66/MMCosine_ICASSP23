@@ -1,8 +1,6 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-import sys
-# sys.path.append('/home/ruize_xu/CD/models')
 from models.backbone_audio import resnet18 as resnet18_audio
 from models.backbone_visual import resnet18 as resnet18_visual
 from models.fusion_modules import SumFusion, ConcatFusion, FiLM, GatedFusion
