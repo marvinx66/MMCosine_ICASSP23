@@ -11,7 +11,7 @@ from torch.utils.tensorboard import SummaryWriter
 import torch.nn.functional as F
 from dataset.dataset import AVDataset_CD
 from models.basic_model import AVClassifier
-from utils.utils import setup_seed, weight_init,re_init
+from utils.utils import setup_seed
 
 EPISILON=1e-10
 # NCE loss is used in supplementary material
@@ -51,7 +51,7 @@ class NCELoss(torch.nn.Module):
 
 def get_arguments():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', required=True, defult="CREMAD",type=str,
+    parser.add_argument('--dataset', required=True, default="CREMAD",type=str,
                         help='CREMAD')
     parser.add_argument('--fusion_method', default='concat', type=str,
                         choices=['concat', 'gated', 'film'])
