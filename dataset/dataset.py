@@ -129,11 +129,11 @@ class AVDataset_CD(Dataset):
         data2class = {}
 
         self.mode=mode
-        self.visual_path = '/home/xiaokang_peng/data/CREMA-D/image'
-        self.audio_path = '/home/xiaokang_peng/data/CREMA-D/AudioWAV'
-        self.stat_path = '/home/xiaokang_peng/emotion/data/stat.csv'
-        self.train_txt = '/home/xiaokang_peng/emotion/data/train.csv'
-        self.test_txt = '/home/xiaokang_peng/emotion/data/test.csv'
+        self.visual_path = args.visual_path
+        self.audio_path = args.audio_path
+        self.stat_path = args.stat_path
+        self.train_txt = args.train_txt
+        self.test_txt = args.test_txt
         if mode == 'train':
             csv_file = self.train_txt
         else:

@@ -82,6 +82,14 @@ def get_arguments():
     parser.add_argument('--audio_pretrain',default='None',type=str,help='path of pretrained audio resnet')
     parser.add_argument('--visual_pretrain',default='None',type=str,help='path of pretrained visual resnet')
 
+    # dataset path
+    parser.add_argument('--visual_path', default='data/CREMA-D/image', type=str, help='path to image dataset')
+    parser.add_argument('--audio_path', default='data/CREMA-D/audio', type=str, help='path to audio dataset')
+    parser.add_argument('--stat_path', default='data/CREMA-D/stat.csv', type=str, help='path to state file')
+    parser.add_argument('--train_txt', default='data/CREMA-D/train.csv', type=str, help='path to training annotation file')
+    parser.add_argument('--test_txt', default='data/CREMA-D/test.csv', type=str, help='path to test annotation file')
+
+
        
 
     return parser.parse_args()
