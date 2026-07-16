@@ -152,7 +152,7 @@ class AVDataset_CD(Dataset):
 
                 if item[1] in classes and os.path.exists(
                         self.audio_path + '/' + item[0] + '.wav') and os.path.exists(
-                        self.visual_path + '/' + item[0] + '.jpg'):
+                        self.visual_path + '/' + item[0] + '/' +item[0] + '.jpg'):
 
                     data.append(item[0])
                     data2class[item[0]] = item[1]

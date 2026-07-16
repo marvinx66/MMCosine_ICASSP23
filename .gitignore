@@ -1,5 +1,4 @@
 **/__pycache__/
 */*.pyc
-*.pyc
-*.pyc
-*.pyc
+**/AudioWAV/
+**/Image-01-FPS/

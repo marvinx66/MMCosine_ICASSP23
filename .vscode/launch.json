@@ -13,7 +13,12 @@
                 "--fusion_method", "gated",
                 "--mmcosine", "True",
                 "--scaling", "10",
-                "--dataset", "CREMAD"
+                "--dataset", "CREMAD",
+                "--visual_path", "./data/CREMAD/Image-01-FPS",
+                "--audio_path", "./data/CREMAD/AudioWAV",
+                "--stat_path", "./data/CREMAD/stat.csv", 
+                "--train_txt", "./data/CREMAD/train.csv",
+                "--test_txt", "./data/CREMAD/test.csv",
             ]
         }
     ]
